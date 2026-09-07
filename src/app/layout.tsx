@@ -1,18 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Google_Sans, Google_Sans_Code } from "next/font/google";
 import "./globals.css";
 
 import { AppSidebar } from "@/components/app-sidebar";
-import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import {
+  SidebarInset,
+  SidebarProvider,
+  SidebarTrigger,
+} from "@/components/ui/sidebar";
 import { Separator } from "@/components/ui/separator";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const googleSans = Google_Sans({
+  variable: "--font-google-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const googleSansCode = Google_Sans_Code({
+  variable: "--font-google-sans-code",
   subsets: ["latin"],
 });
 
@@ -25,16 +29,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${googleSans.variable} ${googleSansCode.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <SidebarProvider>
           <AppSidebar />
           <SidebarInset>
             <header className="flex h-14 shrink-0 items-center gap-2 border-b px-4">
-              <SidebarTrigger />
-              <Separator orientation="vertical" className="h-4" />
-              <span className="text-sm font-medium">Shortly</span>
+              <SidebarTrigger className="-ml-1" />
+              <Separator orientation="vertical" className="mr-2 h-4" />
+              <span className="font-heading text-sm font-medium">Shortly</span>
             </header>
             <div className="flex flex-1 flex-col gap-4 p-4">{children}</div>
           </SidebarInset>

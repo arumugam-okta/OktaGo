@@ -7,7 +7,7 @@ export default async function DashboardPage() {
   return (
     <div className="flex flex-col gap-6">
       <div>
-        <h1 className="text-2xl font-semibold">Dashboard</h1>
+        <h1 className="font-heading text-2xl font-semibold">Dashboard</h1>
         <p className="text-muted-foreground text-sm">
           Overview of your short links and click activity will live here.
         </p>
