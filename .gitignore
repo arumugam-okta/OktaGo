@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+# local placeholder db (src/lib/iddb) — remove once swapped for the real client
+/.data/
+
 # production
 /build
 
